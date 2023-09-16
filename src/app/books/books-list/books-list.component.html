@@ -1,0 +1,13 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let book of books">
+    <mat-expansion-panel-header>
+     Title: {{book.title}} | Author: {{book.author}}
+    </mat-expansion-panel-header>
+    <p>{{book.pages}} pages</p>
+    <p>{{book.year}}</p>
+    <mat-action-row>
+      <button type="button" mat-raised-button color="primary" (click)="openDialog(book)">Edit</button>
+      <button type="button" mat-raised-button color="warn" (click)="onDelete(book.id)">Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
