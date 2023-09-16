@@ -8,7 +8,6 @@ import { BooksService } from '../books.service';
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
-  styleUrls: ['./books-list.component.css'],
 })
 export class BooksListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
@@ -31,7 +30,6 @@ export class BooksListComponent implements OnInit, OnDestroy {
   openDialog(book: Book) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = book;
-    // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(BooksEditComponent, dialogConfig);

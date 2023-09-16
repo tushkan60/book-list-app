@@ -1,9 +1,9 @@
 <mat-accordion>
   <mat-expansion-panel *ngFor="let book of books">
     <mat-expansion-panel-header>
-     Title: {{book.title}} | Author: {{book.author}}
+     Title: {{book.title | titlecase}} | Author: {{book.author | titlecase}}
     </mat-expansion-panel-header>
-    <p>{{book.pages}} pages</p>
+    <p>{{book.pages}} Pages</p>
     <p>{{book.year}}</p>
     <mat-action-row>
       <button type="button" mat-raised-button color="primary" (click)="openDialog(book)">Edit</button>

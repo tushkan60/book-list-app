@@ -16,15 +16,13 @@ export class BooksService {
   }
 
   getBooks() {
-    const loadedBooks = JSON.parse(localStorage.getItem('books') || '[]');
-    console.log(loadedBooks);
-    this.books = loadedBooks;
+    this.books = JSON.parse(localStorage.getItem('books') || '[]');
+
     this.bookUpdated.next([...this.books]);
   }
 
   addBook(book: Book) {
     this.books.push(book);
-
     localStorage.setItem('books', JSON.stringify(this.books));
 
     this.bookUpdated.next([...this.books]);
@@ -39,16 +37,18 @@ export class BooksService {
       }
     });
 
-    localStorage.setItem('books', JSON.stringify(updatedBooks));
-    this.books = updatedBooks;
-    this.bookUpdated.next([...this.books]);
+    this.updateStoredBooks(updatedBooks);
   }
 
   deleteBook(id: number) {
     const updatedBooks = this.books.filter((book) => book.id !== id);
 
-    localStorage.setItem('books', JSON.stringify(updatedBooks));
-    this.books = updatedBooks;
+    this.updateStoredBooks(updatedBooks);
+  }
+
+  updateStoredBooks(books: Book[]) {
+    localStorage.setItem('books', JSON.stringify(books));
+    this.books = books;
     this.bookUpdated.next([...this.books]);
   }
 }

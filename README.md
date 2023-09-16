@@ -1,27 +1,60 @@
-# DomProg
+# Angular Book List App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This is a simple Angular application that allows you to manage a list of books. The main page displays a list of books, and you can add, edit, and remove books using a modal window.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Display a list of books on the main page
+- Add a new book using a modal window with a form
+- Edit existing books using a modal window with a pre-filled form
+- Remove books from the list
+- Data persistence using localStorage
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before running the application, make sure you have the following installed:
 
-## Build
+- Node.js
+- Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the project dependencies.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+1. Run `ng serve` to start the development server.
+2. Open your browser and navigate to `http://localhost:4200` to access the application.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Functionality Details
 
-## Further help
+### Main Page
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The main page displays a list of books. Each book in the list shows the author and the title.
+
+### Add Book
+
+To add a new book, click on the "Add New Book" button. This will open a modal window with a form. The form has the following fields:
+
+- Author: Enter the name of the author.
+- Year of Publication: Enter the year the book was published.
+- Title: Enter the title of the book.
+- Number of Pages: Enter the number of pages in the book.
+
+Click the "Save" button to add the book to the list. The modal will close, and the new book will be displayed in the list.
+
+### Edit Book
+
+To edit a book, click on the "Edit" button next to the book in the list. This will open a modal window with a form pre-filled with the book's details. You can make changes to the author, year of publication, title, and number of pages.
+
+Click the "Save" button to update the book in the list. The modal will close, and the updated book will be displayed in the list.
+
+### Remove Book
+
+To remove a book from the list, click on the "Delete" button next to the book. The book will be permanently deleted from the list.
+
+### Data Persistence
+
+The application uses localStorage to store the book list. When you close the browser window and reopen it, the data will be restored, and you will see the previously added books.
