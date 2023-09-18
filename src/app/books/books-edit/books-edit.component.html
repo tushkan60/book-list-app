@@ -2,7 +2,7 @@
   <mat-card>
     <mat-form-field *ngFor="let prop of getBookProperties()">
       <mat-label >{{prop | titlecase}}</mat-label>
-      <input matInput formControlName="{{prop}}" required>
+      <input matInput formControlName="{{prop}}">
       <mat-error *ngIf="!bookForm.controls[prop].valid">
         Please enter a valid value
       </mat-error>

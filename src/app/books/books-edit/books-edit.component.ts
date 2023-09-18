@@ -59,10 +59,18 @@ export class BooksEditComponent implements OnInit {
 
   createForm(title: string, author: string, year: number, pages: number) {
     return new FormGroup({
-      title: new FormControl(title),
-      author: new FormControl(author),
-      year: new FormControl(year, [Validators.min(0), Validators.max(2050)]),
-      pages: new FormControl(pages, [Validators.min(0)]),
+      title: new FormControl(title, { validators: [Validators.required] }),
+      author: new FormControl(author, { validators: [Validators.required] }),
+      year: new FormControl(year, {
+        validators: [
+          Validators.required,
+          Validators.min(0),
+          Validators.max(2050),
+        ],
+      }),
+      pages: new FormControl(pages, {
+        validators: [Validators.required, Validators.min(0)],
+      }),
     });
   }
 
